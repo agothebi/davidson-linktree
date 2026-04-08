@@ -1,0 +1,50 @@
+---
+description: Davidson Hub PWA — stack, Serwist/PWA, clay UI, iOS install prompt, mobile UX
+alwaysApply: true
+---
+
+# Davidson Hub (student link hub PWA)
+
+## Stack
+
+- **Next.js** App Router + TypeScript + **Tailwind CSS**. Upgrade packages intentionally; keep a **lockfile** committed.
+- **PWA:** **Serwist only** — do not use legacy `next-pwa`. This repo uses **`@serwist/turbopack`** + **`next.config.mjs`** + **`app/sw.ts`** + **`app/serwist/[path]/route.ts`** because Next 16 builds with Turbopack; follow the **installed** Serwist Turbopack docs. (`@serwist/next` is for webpack-based builds.)
+- **Icons:** Prefer **`lucide-react`** (tree-shaking, large set, good DX). **`@heroicons/react`** is fine when an icon fits better; pick one per screen/section for consistency.
+- **Deploy:** Vercel (normal Node build, not static export unless explicitly required).
+
+## Make it useful and easy (mobile-first)
+
+- **Tap targets:** Large pill links; keep the main hub to **one short scroll** for ~5–7 links.
+- **Labels:** Short, scannable titles; optional tiny subtitle where it helps (dining, maps, etc.).
+- **External links:** Default `target="_blank"` and `rel="noopener noreferrer"`; use same-tab only when SSO or college flows would break in a new tab.
+- **Safe areas:** Banner and bottom UI respect **`env(safe-area-inset-bottom)`** (and horizontal insets if full-bleed) on notched iPhones.
+- **a11y:** Semantic structure, visible focus states, **`aria-label`** on icon-only buttons (e.g. close on the iOS banner).
+
+## Claymorphism
+
+- Page: soft warm off-white / light pastel (`stone-50`, `slate-50`, or similar).
+- Controls: thick **pill** shapes (`rounded-2xl` / `rounded-3xl`), **bold** link text.
+- **Shadows:** Define **one or two** custom `boxShadow` values in **Tailwind theme** (outer soft drop + inner light TL + inner dark BR). **Do not** paste duplicate long `shadow-[…]` strings on every component.
+
+## PWA surface
+
+- **`public/manifest.json`:** `display: "standalone"`, `theme_color`, `background_color`, icons **192** and **512** (placeholders OK); add **maskable** when real art exists.
+- **`app/layout.tsx`:** Link manifest; `metadata` / viewport **`themeColor`** as appropriate; Apple web app meta for iOS home-screen behavior.
+
+## Data
+
+- **v1:** Static link list in **`app/page.tsx`** or **`lib/links.ts`** (id, label, href, optional icon name, optional category). No CMS unless asked.
+
+## `components/IOSInstallPrompt.tsx` (client only)
+
+- **`"use client"`**; bail if **`typeof window === 'undefined'`**.
+- **Show only on iOS** (UA includes iPhone / iPad / iPod, or project-approved equivalent check).
+- **Hide if already “installed” / standalone:**  
+  **`window.matchMedia('(display-mode: standalone)').matches`**  
+  **OR** **`(window.navigator as Navigator & { standalone?: boolean }).standalone === true`** (covers older Safari home-screen quirks).
+- **Hide if dismissed:** **`localStorage.getItem('hasSeenIOSPrompt')`**; close button sets **`localStorage.setItem('hasSeenIOSPrompt', 'true')`**.
+- **UI:** Sticky bottom banner, high z-index (e.g. 50), clay styling; copy: Share → Add to Home Screen.
+
+## Scope
+
+- Match existing project patterns; avoid drive-by refactors. One focused change beats a wide cleanup.

@@ -15,6 +15,11 @@ export type HubLink = {
   icon?: HubIconName;
   /** Defaults to true — use false for flows that break in a new tab (e.g. some SSO). */
   openInNewTab?: boolean;
+  /**
+   * Best-effort hint to open in the system browser app (vs staying in the PWA
+   * webview/task). Not guaranteed across all browsers/OS versions.
+   */
+  openInExternalBrowser?: boolean;
 };
 
 export const hubLinks: HubLink[] = [
@@ -49,5 +54,6 @@ export const hubLinks: HubLink[] = [
     label: "Wildcat Market (Beta)",
     href: "https://wildcat-market.vercel.app/",
     icon: "ShoppingBag",
+    openInExternalBrowser: true,
   }
 ];

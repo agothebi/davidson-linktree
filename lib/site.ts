@@ -6,8 +6,8 @@ export const site = {
 
 /** Used in PWA manifest and layout metadata — keep in sync with `site.title`. */
 export const appBranding = {
-  name: "Davidson Central",
-  shortName: "Davidson Central",
+  name: "Wildcat Central",
+  shortName: "Wildcat Central",
   description:
     "A mobile-friendly link hub for Davidson College students — dining, maps, and more.",
 } as const;

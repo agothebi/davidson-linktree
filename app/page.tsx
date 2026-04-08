@@ -31,6 +31,7 @@ export default function Home() {
                 subtitle={link.subtitle}
                 icon={link.icon}
                 openInNewTab={link.openInNewTab}
+                openInExternalBrowser={link.openInExternalBrowser}
                 accentIndex={i}
               />
             </li>

@@ -41,6 +41,8 @@ type LinkButtonProps = {
   subtitle?: string;
   icon?: HubIconName;
   openInNewTab?: boolean;
+  /** Best-effort hint to open in the system browser app. */
+  openInExternalBrowser?: boolean;
   /** Picks a pastel surface color (cycles if out of range). */
   accentIndex?: number;
 };
@@ -51,6 +53,7 @@ export function LinkButton({
   subtitle,
   icon,
   openInNewTab = true,
+  openInExternalBrowser = false,
   accentIndex = 0,
 }: LinkButtonProps) {
   const Icon = icon ? iconMap[icon] : null;
@@ -63,7 +66,9 @@ export function LinkButton({
     );
   }
 
-  const rel = openInNewTab ? "noopener noreferrer" : undefined;
+  const rel = openInNewTab
+    ? `noopener noreferrer${openInExternalBrowser ? " external" : ""}`
+    : undefined;
   const target = openInNewTab ? "_blank" : undefined;
 
   const surface =
