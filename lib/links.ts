@@ -29,6 +29,7 @@ export const hubLinks: HubLink[] = [
     href: "https://usa.jamix.cloud/menu/?anro=98579&k=2&mt=8",
     // subtitle: "Dining",
     icon: "UtensilsCrossed",
+    openInNewTab: false,
   },
   {
     id: "web-clock",
