@@ -1,22 +1,28 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fafaf9;
-  --foreground: #292524;
-  --muted: #57534e;
+  --background: #fff0ee;
+  --foreground: #2d2d2d;
+  --muted: #6b5e5a;
+  --accent: #ff7b5c;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
+  --color-accent: var(--accent);
   --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
-  --shadow-clay: 8px 8px 20px rgba(0, 0, 0, 0.08),
-    inset 4px 4px 8px rgba(255, 255, 255, 0.85),
-    inset -4px -4px 8px rgba(0, 0, 0, 0.06);
-  --shadow-clay-sm: 4px 4px 12px rgba(0, 0, 0, 0.06),
-    inset 2px 2px 5px rgba(255, 255, 255, 0.8),
-    inset -2px -2px 5px rgba(0, 0, 0, 0.05);
+  --font-heading: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --shadow-clay: 6px 6px 0px rgba(0, 0, 0, 0.1),
+    0 8px 24px rgba(0, 0, 0, 0.08),
+    inset 0 2px 8px rgba(255, 255, 255, 0.6);
+  --shadow-clay-sm: 4px 4px 0px rgba(0, 0, 0, 0.07),
+    0 4px 12px rgba(0, 0, 0, 0.06),
+    inset 0 1px 4px rgba(255, 255, 255, 0.5);
+  --shadow-clay-hover: 8px 8px 0px rgba(0, 0, 0, 0.12),
+    0 12px 32px rgba(0, 0, 0, 0.1),
+    inset 0 2px 8px rgba(255, 255, 255, 0.6);
 }
 
 body {
@@ -32,4 +38,34 @@ body {
   .pt-safe {
     padding-top: max(0.5rem, env(safe-area-inset-top, 0px));
   }
+}
+
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes banner-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-card-enter {
+  animation: card-enter 400ms ease both;
+}
+
+.animate-banner-pop {
+  animation: banner-pop 300ms ease both;
 }

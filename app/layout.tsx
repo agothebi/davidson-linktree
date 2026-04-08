@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Nunito } from "next/font/google";
+import { Nunito, Sora } from "next/font/google";
 
 import { IOSInstallPrompt } from "@/components/IOSInstallPrompt";
 import { SerwistProvider } from "@/lib/serwist-provider";
@@ -11,6 +11,13 @@ import "./globals.css";
 const nunito = Nunito({
   subsets: ["latin"],
   variable: "--font-nunito",
+  display: "swap",
+});
+
+const sora = Sora({
+  subsets: ["latin"],
+  variable: "--font-sora",
+  weight: ["700", "800"],
   display: "swap",
 });
 
@@ -76,7 +83,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#57534e",
+  themeColor: "#FF7B5C",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -88,7 +95,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${nunito.variable} h-full antialiased`}>
+    <html lang="en" className={`${nunito.variable} ${sora.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col font-sans">
         <SerwistProvider swUrl="/serwist/sw.js">{children}</SerwistProvider>
         <IOSInstallPrompt />

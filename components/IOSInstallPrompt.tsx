@@ -58,13 +58,13 @@ export function IOSInstallPrompt() {
     <div
       role="region"
       aria-label="Install this app on your home screen"
-      className="fixed inset-x-0 bottom-0 z-50 border-t border-stone-200/80 bg-stone-50/95 px-4 pt-3 shadow-[0_-8px_24px_rgba(0,0,0,0.08)] backdrop-blur-sm supports-[backdrop-filter]:bg-stone-50/85 pb-[max(0.75rem,env(safe-area-inset-bottom,0px))]"
+      className="fixed inset-x-0 bottom-0 z-50 border-t border-white/60 bg-[#FFF0EE]/95 px-4 pt-3 shadow-[0_-8px_24px_rgba(0,0,0,0.08)] backdrop-blur-sm supports-[backdrop-filter]:bg-[#FFF0EE]/85 pb-[max(0.75rem,env(safe-area-inset-bottom,0px))]"
     >
-      <div className="mx-auto flex max-w-md items-start gap-3 rounded-3xl border border-stone-200/80 bg-white/90 px-4 py-3 shadow-clay-sm">
-        <p className="min-w-0 flex-1 text-sm font-semibold leading-snug text-stone-900">
+      <div className="animate-banner-pop mx-auto flex max-w-md items-start gap-3 rounded-[28px] border-2 border-white/80 bg-white/90 px-4 py-3 shadow-clay-sm">
+        <p className="min-w-0 flex-1 text-sm font-semibold leading-snug text-foreground">
           Get the app: tap{" "}
-          <span className="whitespace-nowrap font-extrabold">Share</span>, then{" "}
-          <span className="whitespace-nowrap font-extrabold">
+          <span className="whitespace-nowrap font-heading font-extrabold">Share</span>, then{" "}
+          <span className="whitespace-nowrap font-heading font-extrabold">
             Add to Home Screen
           </span>
           .
@@ -72,7 +72,7 @@ export function IOSInstallPrompt() {
         <button
           type="button"
           onClick={dismiss}
-          className="flex size-9 shrink-0 items-center justify-center rounded-2xl border border-stone-200/80 bg-stone-50 text-stone-600 shadow-clay-sm transition-colors hover:bg-stone-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-800"
+          className="flex size-9 shrink-0 items-center justify-center rounded-[16px] border-2 border-white/80 bg-[#FFF0EE] text-muted shadow-clay-sm transition-colors duration-150 hover:bg-accent hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           aria-label="Dismiss install instructions"
         >
           <X className="size-4" strokeWidth={2.5} />

@@ -20,16 +20,16 @@ export type HubLink = {
 export const hubLinks: HubLink[] = [
   {
     id: "office-hours",
-    label: "Office Hours",
+    label: "Office Hours Site",
     href: "https://officehours.site",
-    subtitle: "Faculty office hours",
+    // subtitle: "Faculty office hours",
     icon: "Calendar",
   },
   {
     id: "vail-commons",
     label: "Vail Commons Menu",
     href: "https://usa.jamix.cloud/menu/?anro=98579&k=2&mt=8",
-    subtitle: "Dining",
+    // subtitle: "Dining",
     icon: "UtensilsCrossed",
   },
   {

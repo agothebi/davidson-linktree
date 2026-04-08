@@ -26,13 +26,10 @@ const iconMap = {
 export type HubIconName = keyof typeof iconMap;
 
 const surfaceAccents = [
-  "border-blue-200/80 bg-[#dbeafe] text-blue-950",
-  "border-green-200/80 bg-[#dcfce7] text-green-950",
-  "border-amber-200/80 bg-[#fef3c7] text-amber-950",
-  "border-amber-200/90 bg-[#fde68a] text-amber-950",
-  "border-violet-200/80 bg-[#e9d5ff] text-violet-950",
-  "border-pink-200/80 bg-[#fce7f3] text-pink-950",
-  "border-cyan-200/80 bg-[#cffafe] text-cyan-950",
+  "bg-[#FFE4E1]",
+  "bg-[#E0F2FE]",
+  "bg-[#D1FAE5]",
+  "bg-[#FEF3C7]",
 ] as const;
 
 type LinkButtonProps = {
@@ -72,7 +69,7 @@ export function LinkButton({
         surfaceAccents.length
     ];
 
-  const shellClass = `flex min-h-14 w-full items-center gap-3 rounded-3xl border px-5 py-4 text-left shadow-clay ${surface}`;
+  const shellClass = `flex min-h-14 w-full items-center gap-3 rounded-[36px] border-2 border-white/80 px-5 py-4 text-left text-foreground shadow-clay ${surface}`;
 
   if (!safeUrl) {
     return (
@@ -84,22 +81,22 @@ export function LinkButton({
       >
         {Icon ? (
           <span
-            className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-white/80 text-current opacity-90 shadow-clay-sm"
+            className="flex size-11 shrink-0 items-center justify-center rounded-[20px] border-2 border-white/80 bg-white/60 text-accent shadow-clay-sm"
             aria-hidden
           >
             <Icon className="size-5" strokeWidth={2.25} />
           </span>
         ) : null}
         <span className="min-w-0 flex-1">
-          <span className="block font-bold leading-tight text-inherit">
+          <span className="block font-heading font-bold leading-tight">
             {label}
           </span>
           {subtitle ? (
-            <span className="mt-0.5 block text-sm font-medium text-current opacity-80">
+            <span className="mt-0.5 block text-sm font-medium opacity-80">
               {subtitle}
             </span>
           ) : null}
-          <span className="mt-1 block text-xs font-semibold text-current opacity-90">
+          <span className="mt-1 block text-xs font-semibold opacity-90">
             This link is unavailable.
           </span>
         </span>
@@ -112,22 +109,22 @@ export function LinkButton({
       href={safeUrl.href}
       target={target}
       rel={rel}
-      className={`${shellClass} transition-[transform,box-shadow] active:scale-[0.99] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-800`}
+      className={`${shellClass} transition-all duration-150 ease-in-out hover:-translate-y-0.5 hover:shadow-clay-hover active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent`}
     >
       {Icon ? (
         <span
-          className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-white/80 text-current opacity-90 shadow-clay-sm"
+          className="flex size-11 shrink-0 items-center justify-center rounded-[20px] border-2 border-white/80 bg-white/60 text-accent shadow-clay-sm"
           aria-hidden
         >
           <Icon className="size-5" strokeWidth={2.25} />
         </span>
       ) : null}
       <span className="min-w-0 flex-1">
-        <span className="block font-bold leading-tight text-inherit">
+        <span className="block font-heading font-bold leading-tight">
           {label}
         </span>
         {subtitle ? (
-          <span className="mt-0.5 block text-sm font-medium text-current opacity-80">
+          <span className="mt-0.5 block text-sm font-medium opacity-80">
             {subtitle}
           </span>
         ) : null}
