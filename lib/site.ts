@@ -1,6 +1,6 @@
 /** Site copy for the hub header. Edit here or inline in `app/page.tsx` if you prefer. */
 export const site = {
-  title: "Davidson Central",
+  title: "Wildcat Central",
   subtitle: "Quick links for campus — add this app to your home screen.",
 } as const;
 
