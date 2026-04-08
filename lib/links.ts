@@ -33,15 +33,15 @@ export const hubLinks: HubLink[] = [
     icon: "UtensilsCrossed",
   },
   {
+    id: "web-clock",
+    label: "Web Clock",
+    href: "https://fa-exci-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/faces/FndMobileOverview?fnd=%252FWEB-INF%252Foracle%252Fapps%252Fhcm%252Fwfm%252Fworkarea%252FpublicUiFuse%252FwebClock%252Fflow%252FFuseWebClockBaseFlow.xml%2523FuseWebClockBaseFlow%3BfndWarnChanges%253D%2523%257BProfile.values.HCM_SAVE_CHANGES_WARNING_ENABLED%2Beq%2B%2527Y%2527%257D%253BinvokedFrom%253DQA%253B%3B%3BWeb%2BClock%3Bfalse%3B256%3B%3B%3B&pageParams=fndDetailsMode%3Dtrue%3BreturnFndUrl%3Dhttps%3A%2F%2Ffa-exci-saasfaprod1.fa.ocs.oraclecloud.com%3A443%2FfscmUI%2Ffaces%2FFuseWelcome&returnFndUrl=https%3A%2F%2Ffa-exci-saasfaprod1.fa.ocs.oraclecloud.com%3A443%2FfscmUI%2Ffaces%2FFuseWelcome&fndDetailsMode=true",
+    icon: "Clock",
+  },
+  {
     id: "webtree-notifier",
     label: "WebTree Alert",
     href: "https://coursenotifier.koyeb.app/",
     icon: "AlarmClock",
-  },
-  {
-    id: "web-clock",
-    label: "Web Clock",
-    href: "https://fa-exci-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/faces/FndOverview?fndGlobalItemNodeId=HWM_HCMWFMWORKAREA_FUSE_WEBCLOCK",
-    icon: "Clock",
   }
 ];
