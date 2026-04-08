@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="flex min-h-full flex-1 flex-col">
       <main className="mx-auto flex w-full max-w-md flex-1 flex-col px-4 pt-safe pb-40 sm:px-6">
-        <header className="pb-6 pt-10 text-center">
+        <header className="pb-10 pt-10 text-center">
           <Image
             src="/logo.png"
             alt="Wildcat Central"
