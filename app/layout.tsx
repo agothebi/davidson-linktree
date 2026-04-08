@@ -4,6 +4,7 @@ import { Nunito } from "next/font/google";
 import { IOSInstallPrompt } from "@/components/IOSInstallPrompt";
 import { SerwistProvider } from "@/lib/serwist-provider";
 import { appBranding } from "@/lib/site";
+import { getMetadataBase } from "@/lib/site-url";
 
 import "./globals.css";
 
@@ -19,6 +20,7 @@ const APP_TITLE_TEMPLATE = `%s · ${appBranding.shortName}`;
 const APP_DESCRIPTION = appBranding.description;
 
 export const metadata: Metadata = {
+  metadataBase: getMetadataBase(),
   applicationName: APP_NAME,
   title: {
     default: APP_DEFAULT_TITLE,

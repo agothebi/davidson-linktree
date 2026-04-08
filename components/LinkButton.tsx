@@ -8,6 +8,8 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+import { parseSafeHttpUrl } from "@/lib/safe-url";
+
 const iconMap = {
   Calendar,
   UtensilsCrossed,
@@ -48,18 +50,65 @@ export function LinkButton({
   accentIndex = 0,
 }: LinkButtonProps) {
   const Icon = icon ? iconMap[icon] : null;
+  const safeUrl = parseSafeHttpUrl(href);
+
+  if (process.env.NODE_ENV === "development" && !safeUrl) {
+    console.warn(
+      "[Davidson Hub] Invalid or unsafe href — use http(s) in lib/links.ts:",
+      href,
+    );
+  }
+
   const rel = openInNewTab ? "noopener noreferrer" : undefined;
   const target = openInNewTab ? "_blank" : undefined;
 
   const surface =
-    surfaceAccents[((accentIndex % surfaceAccents.length) + surfaceAccents.length) % surfaceAccents.length];
+    surfaceAccents[
+      ((accentIndex % surfaceAccents.length) + surfaceAccents.length) %
+        surfaceAccents.length
+    ];
+
+  const shellClass = `flex min-h-14 w-full items-center gap-3 rounded-3xl border px-5 py-4 text-left shadow-clay ${surface}`;
+
+  if (!safeUrl) {
+    return (
+      <span
+        className={`${shellClass} cursor-not-allowed opacity-90`}
+        role="group"
+        aria-label={`${label}, link unavailable — use a valid http or https URL in lib/links.ts`}
+        title="Invalid link: use an http(s) URL in lib/links.ts"
+      >
+        {Icon ? (
+          <span
+            className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-white/80 text-current opacity-90 shadow-clay-sm"
+            aria-hidden
+          >
+            <Icon className="size-5" strokeWidth={2.25} />
+          </span>
+        ) : null}
+        <span className="min-w-0 flex-1">
+          <span className="block font-bold leading-tight text-inherit">
+            {label}
+          </span>
+          {subtitle ? (
+            <span className="mt-0.5 block text-sm font-medium text-current opacity-80">
+              {subtitle}
+            </span>
+          ) : null}
+          <span className="mt-1 block text-xs font-semibold text-current opacity-90">
+            This link is unavailable.
+          </span>
+        </span>
+      </span>
+    );
+  }
 
   return (
     <a
-      href={href}
+      href={safeUrl.href}
       target={target}
       rel={rel}
-      className={`flex min-h-14 w-full items-center gap-3 rounded-3xl border px-5 py-4 text-left shadow-clay transition-[transform,box-shadow] active:scale-[0.99] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-800 ${surface}`}
+      className={`${shellClass} transition-[transform,box-shadow] active:scale-[0.99] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-800`}
     >
       {Icon ? (
         <span
