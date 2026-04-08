@@ -21,22 +21,22 @@ export const hubLinks: HubLink[] = [
   {
     id: "office-hours",
     label: "Office Hours",
-    href: "https://example.com",
+    href: "https://officehours.site",
     subtitle: "Faculty office hours",
     icon: "Calendar",
   },
   {
     id: "vail-commons",
     label: "Vail Commons Menu",
-    href: "https://example.com",
+    href: "https://usa.jamix.cloud/menu/?anro=98579&k=2&mt=8",
     subtitle: "Dining",
     icon: "UtensilsCrossed",
   },
   {
-    id: "campus-map",
-    label: "Campus Map",
-    href: "https://example.com",
-    icon: "MapPin",
+    id: "webtree-notifier",
+    label: "WebTree Alert",
+    href: "https://coursenotifier.koyeb.app/",
+    icon: "AlarmClock",
   },
   {
     id: "library",
@@ -45,15 +45,15 @@ export const hubLinks: HubLink[] = [
     icon: "BookOpen",
   },
   {
-    id: "shuttle",
-    label: "Wildcat Shuttle",
-    href: "https://example.com",
-    icon: "Bus",
-  },
-  {
     id: "catalog",
     label: "Course Catalog",
     href: "https://example.com",
     icon: "GraduationCap",
   },
+  {
+    id: "web-clock",
+    label: "Web Clock",
+    href: "https://fa-exci-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/faces/FndOverview?fndGlobalItemNodeId=HWM_HCMWFMWORKAREA_FUSE_WEBCLOCK",
+    icon: "Clock",
+  }
 ];

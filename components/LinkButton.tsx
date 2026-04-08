@@ -1,4 +1,6 @@
 import {
+  AlarmClock,
+  Clock,
   BookOpen,
   Bus,
   Calendar,
@@ -11,6 +13,8 @@ import {
 import { parseSafeHttpUrl } from "@/lib/safe-url";
 
 const iconMap = {
+  Clock,
+  AlarmClock,
   Calendar,
   UtensilsCrossed,
   MapPin,
@@ -119,7 +123,9 @@ export function LinkButton({
         </span>
       ) : null}
       <span className="min-w-0 flex-1">
-        <span className="block font-bold leading-tight text-inherit">{label}</span>
+        <span className="block font-bold leading-tight text-inherit">
+          {label}
+        </span>
         {subtitle ? (
           <span className="mt-0.5 block text-sm font-medium text-current opacity-80">
             {subtitle}
