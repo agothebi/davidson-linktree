@@ -6,6 +6,7 @@ import {
   Calendar,
   GraduationCap,
   MapPin,
+  ShoppingBag,
   UtensilsCrossed,
   type LucideIcon,
 } from "lucide-react";
@@ -21,6 +22,7 @@ const iconMap = {
   BookOpen,
   Bus,
   GraduationCap,
+  ShoppingBag,
 } as const satisfies Record<string, LucideIcon>;
 
 export type HubIconName = keyof typeof iconMap;
@@ -30,6 +32,7 @@ const surfaceAccents = [
   "bg-[#E0F2FE]",
   "bg-[#D1FAE5]",
   "bg-[#FEF3C7]",
+  "bg-[#EDE9FE]",
 ] as const;
 
 type LinkButtonProps = {

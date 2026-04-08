@@ -43,5 +43,11 @@ export const hubLinks: HubLink[] = [
     label: "WebTree Alert",
     href: "https://coursenotifier.koyeb.app/",
     icon: "AlarmClock",
+  },
+  {
+    id: "wildcat-market",
+    label: "Wildcat Market",
+    href: "https://wildcat-market.vercel.app/",
+    icon: "ShoppingBag",
   }
 ];
