@@ -39,18 +39,6 @@ export const hubLinks: HubLink[] = [
     icon: "AlarmClock",
   },
   {
-    id: "library",
-    label: "Library",
-    href: "https://example.com",
-    icon: "BookOpen",
-  },
-  {
-    id: "catalog",
-    label: "Course Catalog",
-    href: "https://example.com",
-    icon: "GraduationCap",
-  },
-  {
     id: "web-clock",
     label: "Web Clock",
     href: "https://fa-exci-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/faces/FndOverview?fndGlobalItemNodeId=HWM_HCMWFMWORKAREA_FUSE_WEBCLOCK",
