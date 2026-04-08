@@ -46,7 +46,7 @@ export const hubLinks: HubLink[] = [
   },
   {
     id: "wildcat-market",
-    label: "Wildcat Market",
+    label: "Wildcat Market (Beta)",
     href: "https://wildcat-market.vercel.app/",
     icon: "ShoppingBag",
   }
