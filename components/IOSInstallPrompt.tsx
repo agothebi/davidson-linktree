@@ -63,7 +63,7 @@ export function IOSInstallPrompt() {
       <div className="animate-banner-pop mx-auto flex max-w-md items-start gap-3 rounded-[28px] border-2 border-white/80 bg-white/90 px-4 py-3 shadow-clay-sm">
         <p className="min-w-0 flex-1 text-sm font-semibold leading-snug text-foreground">
           Get the app: tap{" "}
-          <span className="whitespace-nowrap font-heading font-extrabold">Share</span>, then{" "}
+          <span className="whitespace-nowrap font-heading font-extrabold">Share Icon</span>, then{" "}
           <span className="whitespace-nowrap font-heading font-extrabold">
             Add to Home Screen
           </span>
